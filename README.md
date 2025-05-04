@@ -12,62 +12,60 @@ Run StegExpose on a directory of suspected image files using the command:
 ### Step 3:
 Analyze file signatures using tools like file, binwalk, or xxd to check for inconsistencies or embedded content.
 
-## PROGRAM:
-- **Install and Verify Steghide Tool**
-  ```bash
-  sudo apt update
-  sudo apt install steghide
-  steghide --version 
-  ```
-- **Embed the Secret Message into the Image** 
-  ```bash
-  steghide embed -cf image.jpg -ef hidden.txt
-  ```
+## PROCEDURE:
+StegExpose and File Signature Analysis Commands
 
-- **Extract the Hidden Secret from Image and Verify the Extracted Message**
-  ```bash
-  steghide extract -sf image.jpg
-   cat hidden.txt
-  ```
+# Step 1: Download Image and Create Secret Message File
+• Download a .jpeg image  from a trusted website or use own image.
 
-- **Retrieve Information About the Embedded Data**
-  ```bash
-   steghide info image.jpg
-  ```
+![image](https://github.com/user-attachments/assets/e8d88fc9-6cd0-4d71-87ed-300ceee7ab29)
 
-- **Analyze File Signature**
-  ```bash
-    file image.jpg
-    binwalk image.jpg
-  ```
- 
+• Create a text file named secret with a confidential message:
+
+![image](https://github.com/user-attachments/assets/d97fe8bf-c605-4f69-9ef4-6d991c48c73e)
+
+# Step 2: Install and Verify Steghide Tool
+• To install Steghide on Kali linux,run:
+
+• Confirm the installation by checking its version:
+
+![image](https://github.com/user-attachments/assets/a10a04a2-6266-4a5c-98e5-e4e331318e81)
+
+# Step 3: Embed the Secret Message into the Image
+• Use the following command to embed secret into praveen.jpeg:
+
+![image](https://github.com/user-attachments/assets/0b461cbe-10e5-4f1f-a272-240f39ed531d)
+
+# Step 4: Delete the Original Secret File
+• After embedding, delete the plaintext file:
+
+![image](https://github.com/user-attachments/assets/a3bb37c5-8e86-4b53-a869-2a26ca227244)
+
+
 ## OUTPUT:
-### Install and Verify Steghide Tool
-![image](https://github.com/user-attachments/assets/a129d16e-b2c2-4eb7-a670-2d3a9e9adfb7)
+List of Images with Steganography Detection Scores and File Signature Details
 
-### Embed the Secret Message into the Image
-![image](https://github.com/user-attachments/assets/00ebfedf-774a-4413-ab1a-1995387b1837)
+# Step 1: Extract the Embedded Secret from the Image
 
+![image](https://github.com/user-attachments/assets/4c39d9c7-92a9-4081-b40d-ea5540e94c49)
 
-### Delete Original Secret File
-![image](https://github.com/user-attachments/assets/d67c04a7-38f0-462f-8f85-f47699abc07e)
+• To retrieve the hidden file:
+• Enter the same passphrase used during embedding.
 
+![image](https://github.com/user-attachments/assets/b7da3f33-4d8c-4fa0-9349-dbc28d944d53)
 
-###  Extract the Hidden Secret from Image
-![image](https://github.com/user-attachments/assets/d6e66929-7023-46a3-bb02-c9722e37541b)
+# Step 2: Verify the Extracted Message
+• Display the extracted file content to verify:
 
-### Verify the Extracted Message
-![image](https://github.com/user-attachments/assets/907b0a76-6bc5-4571-8891-f00600be7117)
+• Ensure the message matches the original secret content.
 
+• Another command to see the same secret message is
 
-### Retrieve Information About the Embedded Data
-![image](https://github.com/user-attachments/assets/68d5b376-f0a8-4467-9841-1790a283b0ba)
+# Step 3: Retrieve Information About the Embedded Data
+• To gather details about embedded content in the image:
 
+![image](https://github.com/user-attachments/assets/9a499ab3-50fd-4a9d-a08f-5a01eca456b8)
 
-### Analyze File Signature
-![image](https://github.com/user-attachments/assets/00834b59-fc40-4bff-ad46-dd3fdee2a993)
-
-![image](https://github.com/user-attachments/assets/60d009ee-8a50-4763-b7c7-39361a01b858)
-
+• This will display file type, size, and whether data is embedded.
 ## RESULT:
 Hidden data was successfully detected and file signatures were analyzed for irregularities.
